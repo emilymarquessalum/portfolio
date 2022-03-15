@@ -38,7 +38,7 @@
 
   font-weight: bold;
  
-  width: 25vw;
+  width: 23vw;
   height: 7vh;
   text-align: center;
 
@@ -60,14 +60,15 @@
 {   
   display: block;
   text-align: center;
-  width: 50%;
+  width: 28vw; 
   float: right;
+  margin-right: 20vw;
+
 }
 
 .tech-logo
 {
-  width: 30%;
-  padding-top: 1vh;
+  width: 10vw;
   margin-right: 1vw;
   display: inline;
 }

@@ -52,11 +52,7 @@ const contactForm = document.getElementById("contact-form");
 function sendEmail(event) { 
 
     event.preventDefault();
-    const sendButton = document.getElementById("send_email");
-
-    sendButton.classList.add("powered");
-    sendButton.innerHTML = "Sending...";
-
+     
      
      
 
