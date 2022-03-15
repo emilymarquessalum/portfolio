@@ -1,0 +1,92 @@
+
+.system-configurations {
+    margin: 0;
+    z-index: 10;
+    position: fixed;
+    text-align: center;
+    color: rgb(251, 255, 242);
+
+    text-transform: lowercase;
+    background-color: rgb(39, 44, 40);
+    width: 100vw;
+    height: 100vh;
+    transition: 0s !important;
+    
+}
+
+.system-configurations label {
+    display: inline;
+}
+
+.closed-configurations {
+    animation: close 2s forwards;
+}
+
+
+@keyframes close {
+    
+    100% {
+        margin-left: -100vw;
+    }
+}
+
+.closed-configurations-input {
+    animation: close-input 4s forwards;
+}
+
+
+@keyframes close-input {
+    
+    100% {
+        margin-left: -150vw;
+    }
+}
+
+
+
+.system-configurations-title {
+    margin: auto;
+
+    color: rgb(192, 238, 223);
+
+
+    font-size: 4vmax;
+}
+
+
+#configuration-form input:hover {
+
+    border: 1px solid rgb(92, 91, 91);
+    border-right: 0;
+    border-left: 0;
+}
+
+.configuration-input {
+    display: block;
+    position: relative;  
+    background-color: var(--classsy-black);
+ 
+    border: 1px solid rgb(165, 163, 163);
+    border-right: 0;
+    border-left: 0;
+    color: var(--pretty-green);
+    font-size: 3vmax;
+}
+
+.system-configurations-submit { 
+    width: 30vw; 
+
+    position: absolute;
+    margin: 0;
+    left: 35vw;
+    top: 80vh;
+}   
+
+
+#configuration-form-save-checkbox {
+    display: inline !important;
+    width: fit-content;
+
+
+    
+}

@@ -24,7 +24,7 @@
   border-right: 0;
   border-top: 0;
   border-left: 0;
-  color: #65ac6e; 
+  color: var(--code);
   font-size: 3vmin;
   padding-left: 0; 
   margin: auto;
@@ -51,10 +51,10 @@
   display: block;
   border-radius: 10%;
   margin: auto; 
-  width: 40vmin;
+  width: 40vmax;
    
   font-size: 4.5vmin;
-  height: 7.5vmin;
+  height: 7.5vmax;
   color: #cbfdd1;
   background-color: #1b221c;
 }
@@ -62,7 +62,7 @@
 .profile_key {
 
   font-size: 7vmax;
-  color: #00ff22;
+  color: var(--code);
   margin-left: 15%; 
     padding: 1%;
   margin-bottom: 2.5%;
@@ -88,7 +88,7 @@
 
 .From_value::before {
   content: "";
-  background:url('../res/brazil.png');
+  background:url('../res/flags/brazil.png');
   background-size:contain;
   background-repeat: no-repeat;
   position: absolute;
@@ -105,6 +105,8 @@
    
   font-size: 3vmax !important;
   padding-right: 30vw;
+
+  text-transform: capitalize;
 }
  
 
@@ -137,7 +139,9 @@
 
 .closed_keys {
 
-  font-size: 0;
+  font-size: 0; 
+  width: 0;
+  height: 0;
 }
 
 .hidden_from_raw {

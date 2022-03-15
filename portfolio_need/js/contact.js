@@ -1,9 +1,14 @@
 
+import languageLoad from "./systemConfigurations/languageLoad.js";
 
+const translateWord = languageLoad.translateWord;
 
 var popupDiv = null;
 
 function makePopup(title, text) {
+
+    title = translateWord(title);
+    text = translateWord(text);
 
     if(popupDiv) {
 
@@ -17,7 +22,6 @@ function makePopup(title, text) {
 
     const titleElement = document.createElement("h3");
     titleElement.innerHTML = title;
-
     popupDiv.appendChild(titleElement);
 
     const textElement = document.createElement("p");
@@ -25,16 +29,10 @@ function makePopup(title, text) {
 
     popupDiv.appendChild(textElement);
 
-    
-    const closeButton = document.createElement("button");
-    closeButton.innerHTML = "X";
-    closeButton.classList.add("close_popup_button");
-    closeButton.onclick =  function()  {popupDiv.remove();};
-    popupDiv.appendChild(closeButton);
-
-
+     
     document.body.appendChild(popupDiv);
 }
+
  
 function validateEmail (emailAdress)
 {
@@ -45,75 +43,74 @@ function validateEmail (emailAdress)
     return false; 
   }
 }
-formBox = document.getElementById("contact-form-box")
+
+const contactFormBox = document.getElementById("contact-form-box")
                  
-const form = document.getElementById("contact-form");
+const contactForm = document.getElementById("contact-form");
     
 
 function sendEmail(event) { 
 
     event.preventDefault();
-    sendButton = document.getElementById("send_email");
+    const sendButton = document.getElementById("send_email");
 
     sendButton.classList.add("powered");
     sendButton.innerHTML = "Sending...";
 
-    
-    let elements = form.getElementsByClassName("input-element");
-
-    let message = 'So, \n';
+     
+     
 
     const submitInfo = {};
 
-    for(element of elements)
-    {
-        const value = element.value;
 
-        submitInfo[element.id] = value;
+    const inputs = Array.from(event.target.querySelectorAll(".input-element"));
 
-        message += `${element.id}: ${value} \n`;        
-    }
+    inputs.forEach((input)=> {
+      submitInfo[input.getAttribute("name")] = input.value;
+    })
+ 
     
     if(submitInfo['name'].length <= 3) {
         
-        makePopup("Problem in name field!", "This name is too short!");
+        makePopup("name_problem", "short_name");
         return;
     }
 
     if(!validateEmail(submitInfo['email']))
     {
-        makePopup("Problem in email field!", "Not a proper email!");
+        makePopup("email_problem", "bad_email");
         return;
     }
     
-    formBox.classList.add("closed_contact_top");
+    contactFormBox.classList.add("closed_contact_top");
  
 
     var data = new FormData(event.target);
+    
     fetch(event.target.action, {
-      method: form.method,
+      method: contactForm.method,
       body: data,
       headers: {
           'Accept': 'application/json'
       }
     }).then(response => {
       if (response.ok) {
-        makePopup("Email sent!", "Thank you for your time!");
+        makePopup("email_sent", "thank_you");
        
       } else {
         response.json().then(data => {
           if (Object.hasOwn(data, 'errors')) {
-            makePopup("Oh no!", "A problem happened! Your email wasn't sent!");
+            makePopup("oh_no", "email_not_sent");
           } 
              
           
         })
       }
     }).catch(error => {
-      makePopup("Oh no!", "A problem happened! Your email wasn't sent!");
+      makePopup("oh_no", "email_not_sent");
     });
 
         return false;
 }
 
-form.addEventListener("submit", sendEmail);
+contactForm.addEventListener("submit", sendEmail);

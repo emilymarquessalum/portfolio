@@ -1,10 +1,5 @@
 
-
-@font-face {
-  font-family: "monolisa";
-  src: url("../res/MonoLisa_Font/MonoLisa-Regular.ttf")
-
-}
+ 
 
 @import url(https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.css);
 
@@ -28,7 +23,8 @@
  
 --classy-black: rgb(36, 36, 24);
 
- 
+ --code: #00ff22;
+ --pretty-green: rgb(154, 218, 90);
 
 --projects-offset: 0vw;
 --project-offset: 1vw;
@@ -73,6 +69,11 @@ body
   ::-webkit-scrollbar {
       width: 2vh;
     }
+
+  
+  .config::-webkit-scrollbar {
+    width: 0;
+  }
   
   /* Track */
   ::-webkit-scrollbar-track {
@@ -285,22 +286,4 @@ opacity: 0;
 }
 
 
-.closed_contact_top {
-
  
-
-animation: close 5s forwards;
- 
-}
-
-
-@keyframes close {
-  
-  0% { 
-    left: -1%;
-  }
-  100% {  
-
-    left: -100%;
-  }
-}

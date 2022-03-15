@@ -8,8 +8,8 @@
 { 
 
   width: fit-content;
-  
-  margin:auto;
+   
+  left: 30vw;
   position: relative;
   background-color: #333131;
   text-align: center;
@@ -21,15 +21,34 @@
   
     padding-left: 1vw;
     padding-right: 1vw;
-
+  
  
 }
 
+.closed_contact_top {
+
  
 
-.contact_form input, .contact_form textarea
-{
+  animation: close 5s forwards  ; 
+  }
   
+  
+  @keyframes close {
+    
+    0% { 
+      left: -1vw;
+    }
+ 
+    100% {  
+  
+      left: -7vw;
+    }
+  }
+
+
+
+
+ .contact-input {
   background-color: var(--darky);
   display: block; 
   margin-left: auto;
@@ -49,8 +68,6 @@
 
   caret-color: #51df64;
   transition: 0.5s;
-
-  
  }
 
 .contact_form input::grammar-error  {
