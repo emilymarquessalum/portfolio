@@ -49,14 +49,35 @@
 .profile_button {
 
   display: block;
-  border-radius: 10%;
+  border-radius: 5%;
   margin: auto; 
-  width: 40vmax;
-   
+  width: 60vw;
+
+  margin-bottom: 2vh;
   font-size: 4.5vmin;
   height: 7.5vmax;
-  color: #cbfdd1;
-  background-color: #1b221c;
+  color:  var(--code);
+  background-color: #113a22;
+
+  --border-color-xs: rgb(41, 80, 10);
+
+
+  --border-color-ys: #2b2a2a;
+
+  border-left: 10px solid var(--border-color-xs);
+  border-right: 10px solid var(--border-color-xs);
+  border-top: 10px solid var(--border-color-ys);
+  border-bottom: 6px solid var(--border-color-ys);
+  
+}
+
+.profile_button:hover {
+  background-color: #04682d;
+}
+
+ 
+.profile_button::after {
+  content: "();";
 }
 
 .profile_key {
@@ -142,6 +163,7 @@
   font-size: 0; 
   width: 0;
   height: 0;
+  border: 0;
 }
 
 .hidden_from_raw {

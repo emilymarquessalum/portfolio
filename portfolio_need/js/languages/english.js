@@ -15,7 +15,7 @@ addToLanguage("english", {
     "message_to_send": "Give me a Message!",
     "call_me_in": "Or call me in...",
     "contacting": "Contacting",
-    "build_profile": "Build My Profile",
+    "build_profile": "buildMyProfile",
     "to_know_me": "For you to know a bit about me...",
     "projects": "Projects",
     "profile": "Profile",
