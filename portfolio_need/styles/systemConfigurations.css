@@ -30,6 +30,19 @@
     }
 }
 
+@keyframes open {
+   
+
+    0% {
+        overflow: hidden;
+        width: 0;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+
 .closed-configurations-input {
     animation: close-input 4s forwards;
 }
@@ -49,8 +62,10 @@
 
     color: rgb(192, 238, 223);
 
+    margin-top: 2vh;
+    font-size: 4vw;
 
-    font-size: 4vmax;
+
 }
 
 
@@ -71,6 +86,13 @@
     border-left: 0;
     color: var(--pretty-green);
     font-size: 3vmax;
+ 
+}
+
+
+.configuration-input-container {
+     
+    background-color: rgba(0, 0, 0, 0.171);
 }
 
 .system-configurations-submit { 
@@ -83,10 +105,20 @@
 }   
 
 
+
+#configuration-form-save-checkbox-container {
+
+    position: absolute;
+    
+    top: 76vh;
+    left: 40vw;
+    text-align: center;
+    font-size: 2vw;
+}
+
 #configuration-form-save-checkbox {
     display: inline !important;
-    width: fit-content;
+ 
 
 
-    
 }

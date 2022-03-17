@@ -15,8 +15,7 @@
   display: inline-block;
   width: calc(var(--project-width) * 5.5);
 
-  overflow-x: scroll;
-  white-space:nowrap; 
+  overflow-x: scroll; 
   overflow-y: hidden;
   text-align: center;
   
@@ -36,8 +35,7 @@
 .project
 {
   display: inline;
-  position: relative;
-  white-space:nowrap;  
+  position: relative; 
   margin-top: 2vh; 
   height: 100%;
   width: var(--project-width );
@@ -80,18 +78,23 @@ z-index: 3;
 .project-info {
 
   user-select: none;
-
-  display: inline;  
+ 
   
   top: 2vh;
-  left: 30%;
+  left: 10%;   
   position: absolute;
   color: var(--light-main);
+  
 
-
-  font-size: 2.8vmin;
+  width: 14vw;
+  height: fit-content;
+  overflow-wrap: break-word;
+  
   text-transform: capitalize;
+  font-size: 3vmin; 
 }
+
+ 
 
  
 .project-selected img

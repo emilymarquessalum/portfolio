@@ -61,7 +61,12 @@ function addToLanguage(newLanguage, translations) {
 
 function translateWord(key) {
     /*console.log("translating " + key + " with " + selectedLanguage);*/
-    return languageTranslations[selectedLanguage][key]
+
+    const languageTranslation = languageTranslations[selectedLanguage];
+    if(!languageTranslation) {
+        return null;
+    }
+    return languageTranslation[key];
 }
 
 export default { addToLanguage, translateWord, loadLanguage };

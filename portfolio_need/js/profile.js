@@ -1,13 +1,29 @@
+import languageLoad from "./systemConfigurations/languageLoad.js";
 
 const profile = document.getElementById("profile");
 const profileBody = document.getElementById("profile_body");
 
+
+const translateWord = languageLoad.translateWord;
+
 function addFieldToProfile(title, value, value_raw) {
+
+    let translatedTitle = translateWord(title);
+    
+    if(translatedTitle) {
+        title = translatedTitle;
+    }
+    
 
     let field = document.createElement("tr");
 
     let fieldTitle = document.createElement("td");
     fieldTitle.innerHTML = title;
+    
+    if(!translatedTitle) {
+        fieldTitle.setAttribute("to-translate", title);
+    }
+    
     fieldTitle.classList.add("profile_field_key")
     field.appendChild(fieldTitle);
 
@@ -28,12 +44,17 @@ function addFieldToProfile(title, value, value_raw) {
 function addAgeToProfile() {
 
     const myAge = moment("26-11-2003", "DD-MM-YYYY").fromNow().substring(0, 2);
-    addFieldToProfile("Age", myAge);
+    addFieldToProfile("age", myAge);
 
 }
 
 
+ 
+
 addAgeToProfile();
+ 
+
+
 
 
 

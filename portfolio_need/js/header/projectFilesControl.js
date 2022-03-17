@@ -23,7 +23,7 @@ projectFiles.forEach(setupProjectFile);
 
   
 function setupProjectFile(project_file) { 
-    const project = document.querySelector(`[project-name=${project_file.getAttribute("link-project-name")}`);
+    const project = document.querySelector(`[project-name="${project_file.getAttribute("link-project-name")}"]`);
     project_file.addEventListener('click', moveUserToProject.bind(null, project));
 }
 

@@ -19,9 +19,8 @@ header
 
 
   transition: 3s;
- 
-  border-color: var(--visible_gray);
-  border-width: 1vh;
+  
+  border-right: 4px solid rgb(85, 150, 105);
 
   width: 2.5vw;
   height: 100vh;
@@ -32,6 +31,7 @@ header
   text-align: left;
   transition: 0.7s;
   filter: brightness(74%);
+
 }
 
 

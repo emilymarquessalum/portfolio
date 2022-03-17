@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <title> Portfolio </title>
+    <title> Emily Salum - Portfolio </title>
 
 
 
@@ -61,6 +61,7 @@
                         
 
                             
+                                
 
                                 <a href="#projects" class="header-button header-file closed_file"
                                     link-project-name="heart_beat">
@@ -74,6 +75,7 @@
                                     
 
                             
+                                
 
                                 <a href="#projects" class="header-button header-file closed_file"
                                     link-project-name="barbearia_alura">
@@ -87,6 +89,7 @@
                                     
 
                             
+                                
 
                                 <a href="#projects" class="header-button header-file closed_file"
                                     link-project-name="Crumb Hunt">
@@ -134,23 +137,29 @@
 
 
 
-
-            <select label="Language" id="language-choice-select" class="configuration-input">
-                
-                    <option value="portugues">
-                        portugues
-                    </option>
+            <div class="configuration-input-container">
+                <select label="Language" id="language-choice-select" class="configuration-input">
                     
-                    <option value="english">
-                        english
-                    </option>
-                    
-            </select>
+                        <option value="portugues">
+                            portugues
+                        </option>
+                        
+                        <option value="english">
+                            english
+                        </option>
+                        
+                </select>
+
+            </div>
 
 
-            <input type="checkbox" name = "save-configurations" class="configuration-input" 
-        id="configuration-form-save-checkbox">
-        <label for="save-configurations"> Save Configurations</label>
+
+            <div id="configuration-form-save-checkbox-container"   >
+                <input type="checkbox" name="save-configurations" class="configuration-input"
+                    id="configuration-form-save-checkbox">
+                <label for="save-configurations"> Save Configurations</label>
+
+            </div>
 
         </form>
 
@@ -172,9 +181,10 @@
 
         </div>
 
-         
-
-        <input class="system-configurations-submit configuration-input" type="submit" form="configuration-form" value="Confirm">
+ 
+            <input class="configuration-input-container system-configurations-submit configuration-input" type="submit" form="configuration-form"
+                value="Confirm">
+ 
 
     </div>
 
@@ -307,9 +317,7 @@
                                                     </a>
                                                     
 
-                                                        <p class="project-info">
-                                                            Godot
-                                                        </p>
+                                                        <p class="project-info">godot</p>
 
 
                                             </div>
@@ -342,9 +350,7 @@
                                                     </a>
                                                     
 
-                                                        <p class="project-info">
-                                                            HTML, CSS
-                                                        </p>
+                                                        <p class="project-info">HTML, CSS, JS</p>
 
 
                                             </div>
@@ -377,9 +383,7 @@
                                                     </a>
                                                     
 
-                                                        <p class="project-info">
-                                                            Java
-                                                        </p>
+                                                        <p class="project-info">java</p>
 
 
                                             </div>
@@ -483,6 +487,11 @@
             <a class="contact_button" href="https://www.linkedin.com/in/emily-salum-839653217/">
                 <img class="media_image" src="portfolio_need/res/medias/linkedin_logo.png">
             </a>
+
+            <a class="contact_button" href="https://github.com/emilymarquessalum/">
+                <img class="media_image" src="portfolio_need/res/medias/github_logo.png">
+            </a>
+
         </div>
 
     </footer>
@@ -499,7 +508,6 @@
 <script src="portfolio_need/js/header/headerControl.js"> </script>
 <script src="portfolio_need/js/header/projectFilesControl.js"> </script>
 
-<script src="portfolio_need/js/profile.js"> </script>
 
 <script src="portfolio_need/js/techs.js" type="module"> </script>
 
@@ -511,5 +519,7 @@
     
     <script src="portfolio_need/js/languages/english.js" type="module"></script>
     
+
+        <script src="portfolio_need/js/profile.js" type="module"> </script>
 
 </html>
