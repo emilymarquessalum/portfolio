@@ -1,5 +1,8 @@
 
 
+
+import { closeHeader } from "./headerControl.js";
+
 /* Container that holds all files */
 const projectsFolderContainer = document.querySelector("#projects-buttons");
  
@@ -30,6 +33,8 @@ function setupProjectFile(project_file) {
 
 /* Function that gets called when the file (project link) is clicked */
 function moveUserToProject(project) {
+
+    closeHeader();
     console.log(`offset:  ${project.offsetLeft} Project: ${project.getAttribute("project-name")}`);
 
     projectsBox.scrollLeft = project.offsetLeft - projectsBox.offsetLeft;

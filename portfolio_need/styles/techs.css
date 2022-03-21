@@ -8,19 +8,27 @@
   margin: 0;
   padding-top: 2vh;
   
-  
-  display: block;
+   
  width: 100vw;
+
+ 
+ 
 }
 
+
+.techs-box {
+
+  width: 60%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+
+
+}
      
 .tech-list {
-  
-  float: left;
-  
-  margin-left: 10vw;
-  margin-right: 10vw;
-  width: 20vw;
+   
+   
   text-align: center;
 
 
@@ -63,12 +71,8 @@
 }
 
 .tech-images
-{   
-  display: block;
-  text-align: center;
-  width: 28vw; 
-  float: right;
-  margin-right: 20vw;
+{    
+  text-align: center; 
 
 }
 

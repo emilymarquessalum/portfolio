@@ -36,6 +36,7 @@ function changedLanguage(fastStyle) {
          return;
      }
 
+     const languageSwitch = document.getElementById("language-switch");
     languageSwitch.classList.remove("hidden-switch");
      
     const selectedCase = languageSwitch.querySelector("#" + selectedLanguage + "-case");
@@ -48,8 +49,7 @@ function changedLanguage(fastStyle) {
 }
 
 
-
-const languageSwitch = document.getElementById("language-switch");
+ 
  
 
 const languageTranslations = {};
@@ -57,6 +57,10 @@ const languageTranslations = {};
 function addToLanguage(newLanguage, translations) {
     /*console.log("calling addToLanguage, " + newLanguage);*/
     languageTranslations[newLanguage] = translations;
+}
+
+function getLanguageTranslations() {
+    return languageTranslations;
 }
 
 function translateWord(key) {
@@ -69,4 +73,4 @@ function translateWord(key) {
     return languageTranslation[key];
 }
 
-export default { addToLanguage, translateWord, loadLanguage };
+export default { addToLanguage, getLanguageTranslations, translateWord, loadLanguage };

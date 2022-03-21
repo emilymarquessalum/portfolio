@@ -43,9 +43,9 @@
 <body>
 
 
-    <header id="header">
+    <header id="header"  >
 
-        <div class="container">
+        <div class="container" id="header-container">
 
             <nav>
 
@@ -60,47 +60,59 @@
                     <div id="projects-buttons" class="folder-container closed-folder">
                         
 
-                            
-                                
+                        
+                           
+                        
 
-                                <a href="#projects" class="header-button header-file closed_file"
-                                    link-project-name="heart_beat">
-                                    heart beat
-                                </a>
-
-
-                                
+                        <a href="#projects" class="header-button header-file closed_file"
+                            link-project-name="heart_beat">
+                            heart beat
+                        </a>
 
 
-                                    
-
-                            
-                                
-
-                                <a href="#projects" class="header-button header-file closed_file"
-                                    link-project-name="barbearia_alura">
-                                    barbearia alura
-                                </a>
+                        
 
 
-                                
+                        
+
+                        
+                           
+                        
+
+                        <a href="#projects" class="header-button header-file closed_file"
+                            link-project-name="barbearia_alura">
+                            barbearia alura
+                        </a>
 
 
-                                    
-
-                            
-                                
-
-                                <a href="#projects" class="header-button header-file closed_file"
-                                    link-project-name="Crumb Hunt">
-                                    Crumb Hunt
-                                </a>
+                        
 
 
-                                
+                        
+
+                        
+                           
+                        
+
+                        <a href="#projects" class="header-button header-file closed_file"
+                            link-project-name="Perfect Seven">
+                            Perfect Seven
+                        </a>
 
 
-                                    
+                        
+                        
+
+                        <a href="#projects" class="header-button header-file closed_file"
+                            link-project-name="Crumb Hunt">
+                            Crumb Hunt
+                        </a>
+
+
+                        
+
+
+                        
 
                     </div>
 
@@ -126,69 +138,13 @@
 
 
 
-    <div class="system-configurations">
 
-        <h2 class="system-configurations-title"> System Configurations / Configurações de Sistema</h2>
-
-        <h4 class="language-choice-title"> Pick the Language / Escolha a linguagem </h4>
-
-        <form id='configuration-form'>
-
-
-
-
-            <div class="configuration-input-container">
-                <select label="Language" id="language-choice-select" class="configuration-input">
-                    
-                        <option value="portugues">
-                            portugues
-                        </option>
-                        
-                        <option value="english">
-                            english
-                        </option>
-                        
-                </select>
-
-            </div>
-
-
-
-            <div id="configuration-form-save-checkbox-container"   >
-                <input type="checkbox" name="save-configurations" class="configuration-input"
-                    id="configuration-form-save-checkbox">
-                <label for="save-configurations"> Save Configurations</label>
-
-            </div>
-
-        </form>
-
-
-        <div id="language-switch" class="hidden-switch">
-
-            switch(language) {
-
-            
-                <p class="switch-case" id="portugues-case"> case portugues: </p>
-                <p class="switch-result"> return <img class="language-choice-img"
-                        src="portfolio_need/res/flags/brazil.png">;</p>
-                
-                <p class="switch-case" id="english-case"> case english: </p>
-                <p class="switch-result"> return <img class="language-choice-img"
-                        src="portfolio_need/res/flags/usa.png">;</p>
-                
-                    }
-
-        </div>
-
- 
-            <input class="configuration-input-container system-configurations-submit configuration-input" type="submit" form="configuration-form"
-                value="Confirm">
- 
-
-    </div>
+    <div class="cover-screen"> </div>
 
     <main>
+
+
+
 
         <!-- Introduction! -->
         <div class="section main-section">
@@ -205,10 +161,12 @@
             <h3 class='section-title' to-translate="tech-title"></h3>
 
 
-            <!-- tech_list is an array with strings -->
 
-            <div class="tech-list">
-                
+            <div class="techs-box">
+                <!-- tech_list is an array with strings -->
+
+                <div class="tech-list">
+                    
                     <p class="tech-name" tech-name="python">
                         python
                     </p>
@@ -241,11 +199,11 @@
                         c
                     </p>
                     
-            </div>
+                </div>
 
-            <div class="tech-images">
+                <div class="tech-images">
 
-                
+                    
 
                     <img tech="python" class="tech-logo" src="portfolio_need/res/techs/python-logo.png">
 
@@ -281,136 +239,166 @@
 
             </div>
 
+                
+                
+            </div>
+            
+            
         </div>
 
 
-        <!-- Projects! -->
+        <!-- Projects!  
+            -->
+        
         <section class="projects holder section">
-
+ 
             <h2 class="section-title" id="projects" to-translate="projects"></h2>
 
-            <p class="project-bracket">[</p>
-            <div class="projects-box" id="project-box">
+            <div class="projects-box">
+                <p class="project-bracket">[</p>
+            <div class="projects-selection-box" id="project-box">
                 
 
                     <!-- project_lists is a dict with languages paired to projects (str array) -->
                     
+                    
+                    
+
+                    
+                    
+                    
+                    <div class="project project_element" project-name="heart_beat">
+                        <p class="project-index">
+                            0
+                        </p>
+
                         
+                        <a href='https://gotm.io/emilysalum/heart-beat' class="project_link">
+
                             
+                            <img class="project_image original_image" src="./portfolio_need/res/project-images/heart_beat_presentation_image.png">
 
-                                
-                                    
-                                        
-                                            <div class="project project_element" project-name="heart_beat">
-                                                <p class="project-index">
-                                                    0
-                                                </p>
-
-                                                
-                                                    <a href='https://gotm.io/emilysalum/heart-beat' class="project_link">
-
-                                                        
-                                                            <img class="project_image original_image"
-                                                                src="./portfolio_need/res/project-images/heart_beat_presentation_image.png">
-
-                                                            
-                                                    </a>
-                                                    
-
-                                                        <p class="project-info">godot</p>
-
-
-                                            </div>
-
-                                            <p class="project-comma">,</p>
-
-
-                                            
-
-                                                
+                            
+                        </a>
                         
-                            
 
-                                
-                                    
-                                        
-                                            <div class="project project_element" project-name="barbearia_alura">
-                                                <p class="project-index">
-                                                    1
-                                                </p>
-
-                                                
-                                                    <a href='https://emilymarquessalum.github.io/alura-barbearia/' class="project_link">
-
-                                                        
-                                                            <img class="project_image original_image"
-                                                                src="./portfolio_need/res/project-images/barbearia_alura_presentation_image.png">
-
-                                                            
-                                                    </a>
-                                                    
-
-                                                        <p class="project-info">HTML, CSS, JS</p>
+                        <p class="project-info">godot</p>
 
 
-                                            </div>
-
-                                            <p class="project-comma">,</p>
+                    </div>
 
 
-                                            
+
+                    
 
                                                 
+                    
+                    
+
+                    
+                    
+                    
+                    <div class="project project_element" project-name="barbearia_alura">
+                        <p class="project-index">
+                            1
+                        </p>
+
                         
+                        <a href='https://emilymarquessalum.github.io/alura-barbearia/' class="project_link">
+
                             
+                            <img class="project_image original_image" src="./portfolio_need/res/project-images/barbearia_alura_presentation_image.png">
 
-                                
-                                    
-                                        
-                                            <div class="project project_element" project-name="Crumb Hunt">
-                                                <p class="project-index">
-                                                    2
-                                                </p>
+                            
+                        </a>
+                        
 
-                                                
-                                                    <a href='https://youtu.be/urmSuQsfpsE' class="project_link">
-
-                                                        
-                                                            <img class="project_image original_image"
-                                                                src="./portfolio_need/res/project-images/Crumb Hunt_presentation_image.png">
-
-                                                            
-                                                    </a>
-                                                    
-
-                                                        <p class="project-info">java</p>
+                        <p class="project-info">HTML, CSS, JS</p>
 
 
-                                            </div>
-
-                                            <p class="project-comma">,</p>
+                    </div>
 
 
-                                            
+
+                    
 
                                                 
+                    
+                    
+
+                    
+                    
+                    
+                    <div class="project project_element" project-name="Perfect Seven">
+                        <p class="project-index">
+                            2
+                        </p>
+
+                        
+                        <a href='https://youtu.be/CWss5f941eA' class="project_link">
+
+                            
+                            <img class="project_image original_image" src="./portfolio_need/res/project-images/Perfect Seven_presentation_image.png">
+
+                            
+                        </a>
+                        
+
+                        <p class="project-info">java</p>
+
+
+                    </div>
+
+
+
+                    
+                    
+                    
+                    <div class="project project_element" project-name="Crumb Hunt">
+                        <p class="project-index">
+                            3
+                        </p>
+
+                        
+                        <a href='https://youtu.be/urmSuQsfpsE' class="project_link">
+
+                            
+                            <img class="project_image original_image" src="./portfolio_need/res/project-images/Crumb Hunt_presentation_image.png">
+
+                            
+                        </a>
+                        
+
+                        <p class="project-info">java</p>
+
+
+                    </div>
+
+
+
+                    
+
+                                                
+
+                </div>
+
+                <p class="project-bracket">]</p>
 
             </div>
 
-            <p class="project-bracket">]</p>
 
-        </section>
-
+            </section>
 
 
-        <!-- Profile, Gives some information about me -->
-        <section id="profile" class="profile">
-            <h3 class="subtitle profile_subtitle hidden_from_raw" to-translate="to_know_me"></h3>
-            <h3 class="profile_key key_open">const profile = {</h3>
-            <table class='profile_table'>
-                <tbody id="profile_body">
 
-                    
+            <!-- Profile, Gives some information about me -->
+            <section id="profile" class="profile">
+                <h3 class="subtitle profile_subtitle hidden_from_raw" to-translate="to_know_me"></h3>
+                <h3 class="profile_key key_open">const profile = {</h3>
+                <table class='profile_table'>
+                    <tbody id="profile_body">
+
+                        
                         <tr>
 
                             <td class="profile_field_key" to-translate="from"></td>
@@ -436,15 +424,16 @@
 
                         
 
-                </tbody>
+                    </tbody>
 
-            </table>
-            <h3 class="profile_key">}</h3>
-            <button id="profile_button" class="profile_button" to-translate="build_profile"></button>
+                </table>
+                <h3 class="profile_key">}</h3>
+                <button id="profile_button" class="profile_button" to-translate="build_profile"></button>
 
-            </section'>
+                </section'>
 
     </main>
+
 
     <!-- Footer -> End of site! -->
     <footer class="section contacts" id="contacts">
@@ -504,22 +493,24 @@
 </body>
 
 
+
+<script src="portfolio_need/js/languages/portugues.js" type="module"></script>
+
+<script src="portfolio_need/js/languages/english.js" type="module"></script>
+
+
+<script src="portfolio_need/js/systemConfigurations/main.js" type="module"></script>
+
 <script src="portfolio_need/js/contact.js" type="module"> </script>
-<script src="portfolio_need/js/header/headerControl.js"> </script>
-<script src="portfolio_need/js/header/projectFilesControl.js"> </script>
+<script src="portfolio_need/js/header/headerControl.js" type="module"> </script>
+<script src="portfolio_need/js/header/projectFilesControl.js" type="module"> </script>
 
 
 <script src="portfolio_need/js/techs.js" type="module"> </script>
 
-<script src="portfolio_need/js/systemConfigurations/main.js" type="module"></script>
 
 
 
-    <script src="portfolio_need/js/languages/portugues.js" type="module"></script>
-    
-    <script src="portfolio_need/js/languages/english.js" type="module"></script>
-    
-
-        <script src="portfolio_need/js/profile.js" type="module"> </script>
+<script src="portfolio_need/js/profile.js" type="module"> </script>
 
 </html>

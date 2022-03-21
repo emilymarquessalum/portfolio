@@ -16,15 +16,7 @@
     width: 2.5vmax;
 }
 
-
-.language-choice-title {
-    font-size: 2.5vmax;
-    margin-top: 1vh;
-    margin-bottom: 3vh;
-    padding-top: 10vh;
-    text-align: center;  
-}
-
+ 
 #language-switch {
     width: 60vw;
     height: 40vh;
@@ -52,10 +44,9 @@
 
 
 
-#language-choice-select {
-    background-color: rgb(36, 35, 35);
-    width: 20vw;
-    margin-left: 40vw;
+#language-choice-select { 
+  
+ 
 } 
 
 

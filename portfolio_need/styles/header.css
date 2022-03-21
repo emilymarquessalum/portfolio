@@ -11,6 +11,23 @@ cursor: pointer;
   left: 2vw;
 }
 
+
+.cover-screen {
+
+    z-index: 1;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+
+    user-select: none;
+    pointer-events: none;
+}
+
+.unfocus {
+
+  background-color: rgba(24, 23, 23, 0.473);
+}
+
 header
 { 
   position: fixed;
@@ -37,27 +54,32 @@ header
 
  
 
-
+#header-container {
+ 
+  padding-left: 1vw;
+}
 
 #header {
   overflow-x: hidden;
 
 }
 
+
+/*
 #header:not(.opened_header):hover {
   width: 24vw !important;
 
   background-color: #234219;
 
-}
+}*/
 
 
 .closed_header {
-  width: 2.2vw;
+  width: 2.2vw !important;
 }
 
 .opened_header {
-  background-color: #27441d;
+  background-color: #6ac04d;
   width: 24vw !important;
  
 }
@@ -70,7 +92,7 @@ header
   }
 
   .opened_header {
-    width: 30vw;
+    width: 30vw !important;
   }
 } 
 
@@ -80,11 +102,7 @@ header:hover
   filter: brightness(90%);
 
 }
-
-header:active
-{
-  width: 12vw; 
-}
+ 
 
 
 
