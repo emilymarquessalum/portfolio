@@ -24,7 +24,8 @@ function setLanguage(fastStyle) {
 
     toTranslateObjects.forEach((element) => {
 
-        element.innerHTML = translateWord(element.getAttribute("to-translate"));
+        element.innerHTML = translateWord(element.getAttribute(
+            "to-translate"));
 
     });
 }
@@ -36,14 +37,18 @@ function changedLanguage(fastStyle) {
          return;
      }
 
-     const languageSwitch = document.getElementById("language-switch");
-    languageSwitch.classList.remove("hidden-switch");
+     const languageSwitch = document.getElementById(
+         "language-switch");
+    languageSwitch.classList.remove(
+        "system-configurations__language-switch--hidden");
      
-    const selectedCase = languageSwitch.querySelector("#" + selectedLanguage + "-case");
+    const selectedCase = languageSwitch.querySelector(
+        "#" + selectedLanguage + "-case");
 
 
      setTimeout(()=> {
-        selectedCase.classList.add("selected-case");}, 2500);
+        selectedCase.classList.add("system-configurations__switch-case--selected");},
+         3500);
 
 
 }

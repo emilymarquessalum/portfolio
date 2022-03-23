@@ -11,35 +11,46 @@ let languageSwitchHTML = "";
 Object.keys(languageLoad.getLanguageTranslations()).forEach((language) => {
 
     languageOptionsHTML += `
-    <option value="${language}">
+    <option class="system-configurations__option" value="${language}">
     ${language}
                     </option>
         `
 
-        languageSwitchHTML +=
-            `<p class="switch-case" id="${language}-case"> case ${language}: </p>
-            <p class="switch-result"> return <img class="language-choice-img"
-                    src="portfolio_need/res/flags/${language}.png">;</p>`
+    languageSwitchHTML +=
+        `<p class="system-configurations__switch-case" 
+             id="${language}-case"> 
+                case ${language}: 
+            </p>
             
+            <p class="system-configurations__switch-result"> 
+                return <img class="system-configurations__switch-image"
+                    src="portfolio_need/res/flags/${language}.png">;
+            </p>`
+
 
 });
 
 let systemConfigurationsHTML = `
 <div class="system-configurations">
 
-    <h2 class="system-configurations-title"> System Configurations / Configurações de Sistema</h2>
+    <h2 class="system-configurations__title">
+     System Configurations / Configurações de Sistema
+    </h2>
 
-    <label for="language" class="move-input configuration-title"> Pick the Language / Escolha a linguagem </label>
+ 
 
-    <form id='configuration-form'>
-
-
+    <form id='configuration-form' class='system-configurations__form'>
 
 
-        <div class="configuration-input-container move-input">
-            <select name="language" label="Language" id="language-choice-select" 
-            class="configuration-input configuration-select move-input">`
-  +   languageOptionsHTML
+    <label for="language" class="move-input system-configurations__label"> 
+        Pick the Language / Escolha a linguagem 
+    </label>        
+
+        <div class="system-configurations__input-container move-input">
+            <select name="language" 
+            label="Language" id="language-choice-select" 
+            class="system-configurations__input system-configurations__select move-input">`
+    + languageOptionsHTML
     + `  
             </select>
 
@@ -47,47 +58,55 @@ let systemConfigurationsHTML = `
 
 
 
-        <label for="language" class="configuration-title move-input"> Saving configurations / Salvando configurações </label>
+        <label for="language" class="system-configurations__label move-input"> 
+            Saving configurations / Salvando configurações 
+        </label>
 
-        <div id="configuration-form-save-select-container">
+        
+        <div id="configuration-form-save-select-container"
+        class="system-configurations__input-container move-input">
 
             <select label="Save configurations" 
-            class="configuration-input configuration-select move-input"
+            class="system-configurations__input system-configurations__select move-input"
             id="configuration-form-save-select" name="save-configurations"> 
 
-            <option value="none"> Don't save</option>
-            <option value="local">Save</option>
-            <option value="session"> Save for this session</option>
-            
+                <option class="system-configurations__option" value="none"> Don't save</option>
+                <option class="system-configurations__option" value="local">Save</option>
+                <option class="system-configurations__option" value="session"> Save for this session</option>
+                
 
             </select>
  
 
         </div>
 
+        <input 
+        class="system-configurations__confirm-button 
+        system-configurations__input move-input"
+         type="submit"
+            form="configuration-form" value="Confirm">
+    
+
     </form>
 
 
-    <div id="language-switch" class="hidden-switch">
+    <div 
+    id="language-switch" 
+    class="system-configurations__language-switch system-configurations__language-switch--hidden">
 
         switch(language) {
             `
-            + languageSwitchHTML
-        + `
+    + languageSwitchHTML
+    + ` 
+    }
     </div>
 
 
-    <input class="configuration-input-container system-configurations-submit configuration-input
-    move-input"
-     type="submit"
-        form="configuration-form" value="Confirm">
 
 
 </div>`;
 
-document.body.innerHTML = systemConfigurationsHTML + document.body.innerHTML; 
-
-const configurationForm = document.getElementById("configuration-form");
+ 
 
 
 
@@ -97,9 +116,8 @@ const configurationForm = document.getElementById("configuration-form");
 
 const loadLanguage = languageLoad.loadLanguage;
 
-document.body.classList.add("config");
-
-const languageSelect = document.getElementById("language-choice-select");
+document.body.classList.add("body--config");
+ 
 
 
 function submitConfigurations(event) {
@@ -108,10 +126,12 @@ function submitConfigurations(event) {
 
     let selectedLanguage = languageSelect.value.toLowerCase();
 
-    let saveConfigurationsSelect = configurationForm.querySelector("#configuration-form-save-select");
+    let saveConfigurationsSelect = configurationForm.querySelector(
+        "#configuration-form-save-select");
 
-    
-    saveConfigurations(selectedLanguage, saveConfigurationsSelect);
+
+    saveConfigurations(selectedLanguage,
+        saveConfigurationsSelect);
 
 
     loadLanguage(selectedLanguage);
@@ -125,66 +145,78 @@ function saveConfigurations(selectedLanguage, saveConfigurationsSelect) {
 
     let saveOption = saveConfigurationsSelect.value;
 
-    if(saveOption == "session") {
+    if (saveOption == "session") {
         sessionStorage.setItem("language", selectedLanguage);
         return;
     }
 
-    if(saveOption == 'local') {
+    if (saveOption == 'local') {
         localStorage.setItem("language", selectedLanguage);
         return;
     }
-    
+
 }
 
 function loadedConfigurations(fastStyle) {
 
-    if (fastStyle) {
-        configurationForm.parentElement.remove();
-        document.body.classList.remove("config");
-
+    if (fastStyle) { 
+        document.body.classList.remove("body--config"); 
         return;
     }
 
-    const inputs = Array.from(configurationForm.parentElement.querySelectorAll(".move-input"));
+
+    const inputs = Array.from(
+        configurationForm.parentElement.querySelectorAll(
+            ".move-input"));
+
     inputs.push(languageSelect);
+
     inputs.forEach((input) => {
-        input.classList.add("closed-configurations-input");
+        input.classList.add("system-configurations__input--closed");
     })
 
     setTimeout(() => {
         window.scrollTo(0, 0);
 
-        document.body.classList.remove("config");
+        document.body.classList.remove("body--config");
 
 
-        configurationForm.parentElement.classList.add("closed-configurations");
+        configurationForm.parentElement.classList.add("system-configurations--closed");
 
-        setTimeout(() => { configurationForm.parentElement.remove(); }, 3000);
+        setTimeout(() => { configurationForm.parentElement.remove(); },
+            5000);
 
 
-    }, 5000)
+    }, 6000)
 }
 
-
-window.addEventListener("load", () => {
-
-
-
-    const savedSelectedLanguage =
-         sessionStorage.getItem("language") || localStorage.getItem("language");
+const savedSelectedLanguage =
+    sessionStorage.getItem("language") || localStorage.getItem("language");
 
 
-    if (savedSelectedLanguage) {
 
+if (savedSelectedLanguage) {
+
+
+    window.addEventListener("load", () => {
         loadLanguage(savedSelectedLanguage, true);
         loadedConfigurations(true);
-        return;
-    }
+    });
 
+
+} else {
+
+    document.body.innerHTML = systemConfigurationsHTML + document.body.innerHTML;
+
+
+    
+    var configurationForm = document.getElementById("configuration-form");
+
+    var languageSelect = document.getElementById("language-choice-select");
     configurationForm.addEventListener("submit", submitConfigurations);
 
-});
+}
+
 
 
 

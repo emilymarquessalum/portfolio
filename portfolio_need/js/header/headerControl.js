@@ -3,10 +3,10 @@
 
 
 
-const OPENED_HEADER = "opened_header";
-const CLOSED_HEADER = "closed_header";
+const OPENED_HEADER = "header--opened";
+const CLOSED_HEADER = "header--closed";
 
-const coverScreen = document.querySelector(".cover-screen");
+const coverScreen = document.querySelector(".screen-cover");
 
 var header = document.getElementById("header");
  
@@ -47,7 +47,7 @@ export function closeHeader() {
     
     console.log(" classes : " + header.classList);
 
-    coverScreen.classList.remove("unfocus");
+    coverScreen.classList.remove("screen-cover--unfocus");
 
 }
 
@@ -62,6 +62,6 @@ function openHeader() {
     console.log(" classes : " + header.classList);
 
     console.log(header);
-    coverScreen.classList.add("unfocus");
+    coverScreen.classList.add("screen-cover--unfocus");
 }
  

@@ -1,8 +1,11 @@
 
 
  
-const techNames = Array.from(document.querySelectorAll(".tech-name"));
-const techLogos = Array.from(document.querySelectorAll(".tech-logo"));
+const techNames = Array.from(
+    document.querySelectorAll(".techs__name"));
+
+const techLogos = Array.from(
+    document.querySelectorAll(".techs__image"));
 
 
 
@@ -16,9 +19,9 @@ techNames.forEach((techName) => {
         techLogos.forEach((techLogo) => {
 
             if(techLogo.getAttribute("tech") != nameOfTech) {
-                techLogo.classList.add("off-image");
+                techLogo.classList.add("techs__image--unselected");
             } else {
-                techLogo.classList.remove("off-image");
+                techLogo.classList.remove("techs__image--unselected");
             }
         });
 
@@ -26,7 +29,7 @@ techNames.forEach((techName) => {
 
     techName.addEventListener("mouseout", () => { 
         techLogos.forEach((techLogo) => {
-            techLogo.classList.remove("off-image");
+            techLogo.classList.remove("techs__image--unselected");
         });
     });
 

@@ -26,8 +26,12 @@ projectFiles.forEach(setupProjectFile);
 
   
 function setupProjectFile(project_file) { 
-    const project = document.querySelector(`[project-name="${project_file.getAttribute("link-project-name")}"]`);
-    project_file.addEventListener('click', moveUserToProject.bind(null, project));
+    const project = document.querySelector(`
+    [project-name="${project_file.getAttribute("link-project-name")}"]`);
+
+    
+    project_file.addEventListener('click', 
+    moveUserToProject.bind(null, project));
 }
 
 
@@ -48,9 +52,9 @@ function moveUserToProject(project) {
 
 function markProjectAsSelected(project) {
     console.log("marking as selected");
-    project.classList.remove("project-selected");
+    project.classList.remove("projects__project--selected");
     void project.offsetWidth;
-    project.classList.add("project-selected");
+    project.classList.add("projects__project--selected");
 }
 
  
@@ -59,13 +63,13 @@ function changeFilesSize(folderButton) {
 
     const folderContainer = folderButton.nextElementSibling;
 
-    folderContainer.classList.toggle("closed-folder");
+    folderContainer.classList.toggle("header__folder--closed");
 
     var projectFiles = Array.from(folderContainer.querySelectorAll('a'));
 
     projectFiles.forEach((el) => {
-        el.classList.toggle("opened_file");
-        el.classList.toggle("closed_file");
+        el.classList.toggle("header__file--opened");
+        el.classList.toggle("header__file--closed");
 
     })
 
