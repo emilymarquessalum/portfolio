@@ -17,4 +17,4 @@ HTML, CSS, JS
 
 ## Related:
 
-- [portfolio](https://github.com/emilymarquessalum/portfolio-builder)
+- [Portfolio Builder](https://github.com/emilymarquessalum/portfolio-builder)
