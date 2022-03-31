@@ -1,0 +1,1 @@
+export default class Controller{constructor(t){this.view=new t(this),document.addEventListener("DOMContentLoaded",()=>{this.startBehaviour()})}startBehaviour(){}};
